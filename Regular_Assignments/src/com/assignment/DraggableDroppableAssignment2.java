@@ -30,9 +30,7 @@ public class DraggableDroppableAssignment2
 		driver = new ChromeDriver();
 		driver.get(url);
 		
-		//This site uses iframe so we need to use this, otherwise testcase will not pass
-		driver.switchTo().frame(driver.findElement(By.className("demo-frame")));
-		driver.manage().window().maximize();
+		
 	}
 	
 	@AfterClass
