@@ -1,6 +1,5 @@
 package com.assignment;
 
-import java.io.File;
 import java.io.IOException;
 
 import org.testng.annotations.AfterClass;
@@ -29,7 +28,10 @@ public class DraggableDroppableAssignment2
 		System.setProperty("webdriver.chrome.driver", "D:\\Selenium\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.get(url);
-		
+		driver.manage().window().maximize();
+		//This site uses iframe tag hence we need to use this statement.So that it can find the frame and 
+		//perform drag and drop operation
+		driver.switchTo().frame(driver.findElement(By.className("demo-frame")));
 		
 	}
 	
@@ -49,19 +51,19 @@ public class DraggableDroppableAssignment2
 		action.dragAndDrop(source, target).perform();
 		Thread.sleep(3000);
 
-		File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		try 
-		{
-			FileHandler.copy(scrFile, new File("D:\\Selenium\\screenshot1.png"));
-		}
-		catch (IOException e) 
-			{
-				System.out.println("Exception message is "+e.getMessage());
-			}
-		finally{
-			System.out.println("This has to be executed");
-			
-		}
+//		File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+//		try 
+//		{
+//			FileHandler.copy(scrFile, new File("D:\\Selenium\\screenshot1.png"));
+//		}
+//		catch (IOException e) 
+//			{
+//				System.out.println("Exception message is "+e.getMessage());
+//			}
+//		finally{
+//			System.out.println("This has to be executed");
+//			
+//		}
 	}
 	
 	

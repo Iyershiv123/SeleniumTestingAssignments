@@ -1,10 +1,16 @@
 package com.assignment;
 
+import java.io.File;
+import java.io.IOException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.io.FileHandler;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -46,13 +52,26 @@ public class ScrollWebPageAssignment
 		Thread.sleep(3000);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,1000)");
+//		File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+//		try 
+//		{
+//			FileHandler.copy(scrFile, new File("D:\\Selenium\\Assignment5.png"));
+//		}
+//		catch (IOException e) 
+//			{
+//				System.out.println("Exception message is "+e.getMessage());
+//			}
+//		finally{
+//			System.out.println("This has to be executed");
+//			
+//		}
+////		
 //		
-		
-//		WebElement ele = driver.findElement(By.linkText("Admin"));
-//		js.executeScript("arguments[0].scrollIntoView();", ele);
-		
-//		 js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-		Thread.sleep(3000);
+////		WebElement ele = driver.findElement(By.linkText("Admin"));
+////		js.executeScript("arguments[0].scrollIntoView();", ele);
+//		
+////		 js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+//		Thread.sleep(3000);
 //		
 		
 	}
