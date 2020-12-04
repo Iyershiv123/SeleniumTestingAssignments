@@ -51,7 +51,7 @@ public class ScrollWebPageAssignment
 		 */
 		Thread.sleep(3000);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,1000)");
+//		js.executeScript("window.scrollBy(0,1000)");
 //		File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 //		try 
 //		{
@@ -69,9 +69,9 @@ public class ScrollWebPageAssignment
 //		
 ////		WebElement ele = driver.findElement(By.linkText("Admin"));
 ////		js.executeScript("arguments[0].scrollIntoView();", ele);
-//		
-////		 js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-//		Thread.sleep(3000);
+	Thread.sleep(5000);
+		 js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+		Thread.sleep(3000);
 //		
 		
 	}
